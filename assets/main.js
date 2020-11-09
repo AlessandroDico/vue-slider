@@ -7,10 +7,35 @@
 var app = new Vue ({
     el: '#root',
     data: {
-        titolo: 'paesaggio',
+        titolo: 'Paesaggi dal mondo',
+        allSrc: [
+            'img/first.jpg',
+            'img/second.jpg',
+            'img/third.jpg',
+            'img/fourth.jpg',
+        ],
+        index: 0,
+
     },
     methods: {
+        switchImgForward () {
+            if (this.index < this.allSrc.length - 1) {
+                this.index ++ ;
+            } else {
+                this.index = 0;
+            }
+        },
 
+        switchImgBackwards () {
+            if (this.index > 0) {
+                this.index -- ;
+            } else {
+                this.index = this.allSrc.length - 1;
+            }
+        }
     }
+
+
+
 
 });

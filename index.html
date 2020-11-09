@@ -14,13 +14,13 @@
 
             <div class="carousel-container">
                 <div class="left-arrow">
-                    <i class="far fa-arrow-alt-circle-left"></i>
+                    <i @click="switchImgBackwards()" class="far fa-arrow-alt-circle-left"></i>
                 </div>
                 <div class="images-container">
-                    <img src="" alt="">
+                    <img :src="allSrc[index]" alt="">
                 </div>
                 <div class="right-arrow">
-                    <i class="far fa-arrow-alt-circle-right"></i>
+                    <i @click="switchImgForward()" class="far fa-arrow-alt-circle-right"></i>
                 </div>
             </div>
 
