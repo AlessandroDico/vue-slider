@@ -8,12 +8,14 @@ var app = new Vue ({
     el: '#root',
     data: {
         titolo: 'Paesaggi dal mondo',
+        // array con le immagini
         allSrc: [
             'img/first.jpg',
             'img/second.jpg',
             'img/third.jpg',
             'img/fourth.jpg',
         ],
+        // indice dell'array per partire con la prima immagine in pagina
         index: 0,
 
     },
