@@ -17,7 +17,9 @@
                     <i @click="switchImgBackwards()" class="far fa-arrow-alt-circle-left"></i>
                 </div>
                 <div class="images-container">
-                    <img :src="allSrc[index]" alt="">
+                    <img :src="allSrc[index]" alt=""
+                    @mouseover="stopRotation()"
+                    @mouseleave="imgRotation()">
                 </div>
                 <div class="right-arrow">
                     <i @click="switchImgForward()" class="far fa-arrow-alt-circle-right"></i>
@@ -27,7 +29,8 @@
                 <!-- per crearne tanti quanti le immagini non li copio e incollo ma uso un V-For -->
                 <i class="fa-circle" v-for="(item, pointIndex) in allSrc" :class="pointIndex == index ? 'fas' : 'far'"
                     @click="index = pointIndex"
-                ></i>
+                    @mouseover="stopRotation()"
+                    @mouseleave="imgRotation()"></i>
             </div>
 
 

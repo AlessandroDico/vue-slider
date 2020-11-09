@@ -52,6 +52,9 @@ var app = new Vue ({
                 this.index = 0;
             }
         },
+        stopRotation() {
+            clearInterval(this.timer);
+        }
 
     }
 
