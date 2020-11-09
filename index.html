@@ -25,7 +25,9 @@
             </div>
             <div class="img-point">
                 <!-- per crearne tanti quanti le immagini non li copio e incollo ma uso un V-For -->
-                <i class="fa-circle" v-for="(item, pointIndex) in allSrc" :class="pointIndex == index ? 'fas' : 'far'" ></i>
+                <i class="fa-circle" v-for="(item, pointIndex) in allSrc" :class="pointIndex == index ? 'fas' : 'far'"
+                    @click="index = pointIndex"
+                ></i>
             </div>
 
 

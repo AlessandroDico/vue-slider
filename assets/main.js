@@ -18,7 +18,6 @@ var app = new Vue ({
         // indice dell'array per partire con la prima immagine in pagina
         index: 0,
         timer: null,
-
     },
 
     mounted () {
@@ -52,8 +51,7 @@ var app = new Vue ({
             } else {
                 this.index = 0;
             }
-        }
-
+        },
 
     }
 
