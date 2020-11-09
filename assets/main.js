@@ -17,8 +17,14 @@ var app = new Vue ({
         ],
         // indice dell'array per partire con la prima immagine in pagina
         index: 0,
+        timer: null,
 
     },
+
+    mounted () {
+        this.imgRotation();
+    },
+
     methods: {
         switchImgForward () {
             if (this.index < this.allSrc.length - 1) {
@@ -34,7 +40,21 @@ var app = new Vue ({
             } else {
                 this.index = this.allSrc.length - 1;
             }
+        },
+
+        imgRotation () {
+            this.timer = setInterval(this.next, 3000);
+        },
+
+        next () {
+            if (this.index < this.allSrc.length - 1) {
+                this.index ++ ;
+            } else {
+                this.index = 0;
+            }
         }
+
+
     }
 
 
