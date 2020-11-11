@@ -24,6 +24,12 @@ var app = new Vue ({
         this.imgRotation();
     },
 
+/*
+//si poteva fare in questo modo ed evitare di fare la funzione imgRotation
+    mounted : function () {
+        this.timer = setInterval(this.switchImgForward, 3000);
+    },
+*/
     methods: {
         switchImgForward () {
             if (this.index < this.allSrc.length - 1) {
@@ -42,16 +48,14 @@ var app = new Vue ({
         },
 
         imgRotation () {
-            this.timer = setInterval(this.next, 3000);
+            this.timer = setInterval(this.switchImgForward, 3000);
         },
 
-        next () {
-            if (this.index < this.allSrc.length - 1) {
-                this.index ++ ;
-            } else {
-                this.index = 0;
-            }
-        },
+        // imgRotation () {
+        //     setInterval(this.switchImgForward, 3000);
+        //potevo farla senza salvarla in una variabile ma poi dovrei cambiare il clearInterval
+        // },
+
         stopRotation() {
             clearInterval(this.timer);
         }
